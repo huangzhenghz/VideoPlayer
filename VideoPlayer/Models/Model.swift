@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Video:Identifiable,Decodable{
+struct Video:Identifiable,Decodable{
     var id:Int
     var title:String
     var url:String

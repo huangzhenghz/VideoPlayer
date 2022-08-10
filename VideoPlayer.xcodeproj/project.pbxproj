@@ -14,6 +14,7 @@
 		C9A7D0B528A3ADA8007C8080 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7D0B428A3ADA8007C8080 /* ViewModel.swift */; };
 		C9A7D0B728A3ADC0007C8080 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7D0B628A3ADC0007C8080 /* Model.swift */; };
 		C9A7D0B928A3B0EC007C8080 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7D0B828A3B0EC007C8080 /* VideoView.swift */; };
+		C9A7D0BC28A3D3B3007C8080 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A7D0BB28A3D3B3007C8080 /* ARKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		C9A7D0B428A3ADA8007C8080 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C9A7D0B628A3ADC0007C8080 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C9A7D0B828A3B0EC007C8080 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		C9A7D0BB28A3D3B3007C8080 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A7D0BC28A3D3B3007C8080 /* ARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +46,7 @@
 			children = (
 				C9A7D0A128A3A915007C8080 /* VideoPlayer */,
 				C9A7D0A028A3A915007C8080 /* Products */,
+				C9A7D0BA28A3D3B3007C8080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +102,14 @@
 				C9A7D0B628A3ADC0007C8080 /* Model.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C9A7D0BA28A3D3B3007C8080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9A7D0BB28A3D3B3007C8080 /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

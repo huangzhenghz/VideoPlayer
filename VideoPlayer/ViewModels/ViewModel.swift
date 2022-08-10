@@ -9,6 +9,7 @@ import Foundation
 
 class ViewModel:ObservableObject{
     @Published var videos:[Video] = [Video]()
+    @Published var result_video:[Video]?
     
     init(){
         getRemoteData()
@@ -28,14 +29,22 @@ class ViewModel:ObservableObject{
                 
                 let decoder = JSONDecoder()
                 do{
-                    
                     let data = try decoder.decode([Video].self, from: data!)
-                    self.videos = data
+                    DispatchQueue.main.async {
+                        self.videos = data
+                    }
+                   
                 }
                 catch{
                     print(error)
                 }
             }.resume()
+        }
+    }
+    
+    func searchBook(title:String){
+        result_video = videos.filter { video in
+            return video.title.contains(title)
         }
     }
     

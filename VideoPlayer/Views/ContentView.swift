@@ -10,18 +10,38 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var videos:ViewModel
+    @State var text:String = ""
+    
     var body: some View {
         NavigationView{
-            List(videos.videos){i in
-                NavigationLink(destination: {
-                    VideoView().onAppear(perform: {
-                        
-                    })
-                }, label: {
-                    Text(videos.videos[0].title).padding(.vertical,5)
-                })
-
+            
+            VStack {
+                
+                TextField("Search video", text: $text) .textFieldStyle(.roundedBorder).padding()
+                
+                if videos.result_video == nil || text == ""{
+                    List(videos.videos){i in
+                        NavigationLink(destination: {
+                            VideoView(video: i)
+                        }, label: {
+                            Text(i.title).padding(.vertical,5)
+                        })
+                    }
+                }
+                else{
+                    List(videos.result_video!){i in
+                        NavigationLink(destination: {
+                            VideoView(video: i)
+                        }, label: {
+                            Text(i.title).padding(.vertical,5)
+                        })
+                    }
+                }
+                
             }.navigationTitle("All video")
+                .onChange(of: text) { value in
+                    videos.searchBook(title: value)
+                }
         }
         
     }
